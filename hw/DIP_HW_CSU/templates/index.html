@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DIP-CSU</title>
+
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap-theme.min.css">
+
+    <script src="../static/js/jquery-3.5.1.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+
+    <script type="text/javascript">
+        function upload() {
+            document.getElementById("btn_file").click();
+        }
+    </script>
+
+
+</head>
+<body>
+
+    <h3 style="text-align: center">车牌识别系统</h3>
+
+    <div style="text-align: center; ">
+<!--        <img style="height: 500px; width: 600px" src= {{ img_path }}>-->
+        <img style="height: {{info['h']}}px; width: {{info['w']}}px" src= {{ img_path }}>
+    </div>
+
+    <div style="text-align: center; ">
+        <p>
+            {{ result }}
+        </p>
+    </div>
+
+
+    <div style="text-align: center;height: 60%;">
+        <form enctype="multipart/form-data" method="post">
+
+            <input type="file" id="btn_file" name="file" style="display: none">
+            <input type="button" onclick="upload()" value="上传检测" class="btn btn-primary">
+            <input type="submit" value="检测车牌" class="btn btn-primary">
+
+        </form>
+
+    </div>
+
+
+</body>
+</html>
